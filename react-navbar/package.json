@@ -50,6 +50,11 @@
         "webpack-merge": "^5.8.0"
     },
     "dependencies": {
+        "@emotion/react": "^11.14.0",
+        "@emotion/styled": "^11.14.1",
+        "@fontsource/roboto": "^5.2.8",
+        "@mui/icons-material": "^7.3.4",
+        "@mui/material": "^7.3.4",
         "@types/jest": "^27.0.1",
         "@types/systemjs": "^6.1.1",
         "@types/webpack-env": "^1.16.2",
