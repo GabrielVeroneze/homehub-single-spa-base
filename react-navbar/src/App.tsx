@@ -1,8 +1,44 @@
-import { AppBar, Badge, Box, IconButton, Toolbar, Typography } from '@mui/material'
+import { useState } from 'react'
+import { AppBar, Badge, Box, Divider, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
 import AccountCircle from '@mui/icons-material/AccountCircle'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 
 const App = () => {
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+    const isMenuOpen = Boolean(anchorEl)
+
+    const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+        setAnchorEl(event.currentTarget)
+    }
+
+    const handleMenuClose = () => {
+        setAnchorEl(null)
+    }
+
+    const renderMenu = (
+        <Menu
+            anchorEl={anchorEl}
+            anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+            }}
+            keepMounted
+            transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+            }}
+            open={isMenuOpen}
+            onClose={handleMenuClose}
+        >
+            <MenuItem onClick={handleMenuClose}>Usuário</MenuItem>
+            <Divider />
+            <MenuItem onClick={handleMenuClose}>Configurações</MenuItem>
+            <MenuItem onClick={handleMenuClose}>Perfil</MenuItem>
+            <Divider />
+            <MenuItem onClick={handleMenuClose}>Sair</MenuItem>
+        </Menu>
+    )
+
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" sx={{ backgroundColor: '#9C27B0' }}>
@@ -22,7 +58,7 @@ const App = () => {
                             edge="end"
                             aria-label="account of current user"
                             aria-haspopup="true"
-                            onClick={() => {}}
+                            onClick={handleProfileMenuOpen}
                             color="inherit"
                         >
                             <AccountCircle />
@@ -35,6 +71,7 @@ const App = () => {
                     </Box>
                 </Toolbar>
             </AppBar>
+            {renderMenu}
         </Box>
     )
 }
