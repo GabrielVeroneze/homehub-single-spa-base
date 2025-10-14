@@ -7,6 +7,16 @@ registerApplication({
             /* webpackIgnore: true */ // @ts-ignore-next
             '@homehub/hello-world'
         ),
+    activeWhen: ['/hello-world'],
+})
+
+registerApplication({
+    name: '@homehub/react-navbar',
+    app: () =>
+        import(
+            /* webpackIgnore: true */ // @ts-ignore-next
+            '@homehub/react-navbar'
+        ),
     activeWhen: ['/'],
 })
 
