@@ -1,25 +1,25 @@
-import { registerApplication, start, LifeCycles } from "single-spa";
+import { registerApplication, start, LifeCycles } from 'single-spa'
 
 registerApplication({
-  name: "@single-spa/welcome",
-  app: () =>
-    import(
-      /* webpackIgnore: true */ // @ts-ignore-next
-      "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js"
-    ),
-  activeWhen: ["/"],
-});
+    name: '@single-spa/welcome',
+    app: () =>
+        import(
+            /* webpackIgnore: true */ // @ts-ignore-next
+            'https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js'
+        ),
+    activeWhen: ['/'],
+})
 
-// registerApplication({
-//   name: "@homehub/navbar",
-//   app: () =>
-//     import(
-//       /* webpackIgnore: true */ // @ts-ignore-next
-//       "@homehub/navbar"
-//     ),
-//   activeWhen: ["/"],
-// });
+registerApplication({
+    name: '@homehub/hello-world',
+    app: () =>
+        import(
+            /* webpackIgnore: true */ // @ts-ignore-next
+            '@homehub/hello-world'
+        ),
+    activeWhen: ['/'],
+})
 
 start({
-  urlRerouteOnly: true,
-});
+    urlRerouteOnly: true,
+})
