@@ -2,10 +2,12 @@ import { useState } from 'react'
 import { AppBar, Badge, Box, Button, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Menu, MenuItem, Toolbar } from '@mui/material'
 import AccountCircle from '@mui/icons-material/AccountCircle'
 import NotificationsIcon from '@mui/icons-material/Notifications'
+import SettingsIcon from '@mui/icons-material/Settings'
+import PersonIcon from '@mui/icons-material/Person'
+import LogoutIcon from '@mui/icons-material/Logout'
 import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard'
 import WifiIcon from '@mui/icons-material/Wifi'
 import LockIcon from '@mui/icons-material/Lock'
-import SettingsIcon from '@mui/icons-material/Settings'
 import HomeHubLogo from './assets/home-hub.png'
 
 const App = () => {
@@ -73,23 +75,38 @@ const App = () => {
         <Menu
             anchorEl={anchorEl}
             anchorOrigin={{
-                vertical: 'top',
+                vertical: 'bottom',
                 horizontal: 'right',
             }}
             keepMounted
             transformOrigin={{
                 vertical: 'top',
-                horizontal: 'right',
+                horizontal: 'left',
             }}
             open={isMenuOpen}
             onClose={handleMenuClose}
         >
             <MenuItem onClick={handleMenuClose}>Usuário</MenuItem>
             <Divider />
-            <MenuItem onClick={handleMenuClose}>Configurações</MenuItem>
-            <MenuItem onClick={handleMenuClose}>Perfil</MenuItem>
+            <MenuItem onClick={handleMenuClose}>
+                <ListItemIcon>
+                    <SettingsIcon />
+                </ListItemIcon>
+                <ListItemText>Configurações</ListItemText>
+            </MenuItem>
+            <MenuItem onClick={handleMenuClose}>
+                <ListItemIcon>
+                    <PersonIcon />
+                </ListItemIcon>
+                <ListItemText>Perfil</ListItemText>
+            </MenuItem>
             <Divider />
-            <MenuItem onClick={handleMenuClose}>Sair</MenuItem>
+            <MenuItem onClick={handleMenuClose}>
+                <ListItemIcon>
+                    <LogoutIcon />
+                </ListItemIcon>
+                <ListItemText>Sair</ListItemText>
+            </MenuItem>
         </Menu>
     )
 
