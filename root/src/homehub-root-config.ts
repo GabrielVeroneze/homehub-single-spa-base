@@ -10,6 +10,16 @@ registerApplication({
     activeWhen: ['/'],
 })
 
+registerApplication({
+    name: '@homehub/react-dashboard',
+    app: () =>
+        import(
+            /* webpackIgnore: true */ // @ts-ignore-next
+            '@homehub/react-dashboard'
+        ),
+    activeWhen: ['/'],
+})
+
 start({
     urlRerouteOnly: true,
 })
