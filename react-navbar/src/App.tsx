@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { AppBar, Badge, Box, Divider, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
+import { AppBar, Badge, Box, Divider, IconButton, Menu, MenuItem, Toolbar } from '@mui/material'
 import AccountCircle from '@mui/icons-material/AccountCircle'
 import NotificationsIcon from '@mui/icons-material/Notifications'
+import HomeHubLogo from './assets/home-hub.png'
 
 const App = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
@@ -43,14 +44,11 @@ const App = () => {
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" sx={{ backgroundColor: '#9C27B0' }}>
                 <Toolbar>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{ display: { xs: 'none', sm: 'block' } }}
-                    >
-                        HomeHub
-                    </Typography>
+                    <img
+                        src={HomeHubLogo}
+                        alt="Logotipo do HomeHub"
+                        style={{ width: 176 }}
+                    />
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <IconButton
