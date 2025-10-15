@@ -55,6 +55,7 @@
         "@fontsource/roboto": "^5.2.8",
         "@mui/icons-material": "^7.3.4",
         "@mui/material": "^7.3.4",
+        "@mui/x-charts": "^8.14.0",
         "@types/jest": "^27.0.1",
         "@types/systemjs": "^6.1.1",
         "@types/webpack-env": "^1.16.2",
