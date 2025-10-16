@@ -3,7 +3,7 @@ import CardContent from '@mui/material/CardContent'
 
 const UsersCard = () => {
     return (
-        <Card>
+        <Card sx={{ backgroundColor: '#F5F5F5' }}>
             <CardContent>
                 <h2>Users Card</h2>
             </CardContent>

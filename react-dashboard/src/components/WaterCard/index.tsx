@@ -3,7 +3,7 @@ import CardContent from '@mui/material/CardContent'
 
 const WaterCard = () => {
     return (
-        <Card>
+        <Card sx={{ backgroundColor: '#F5F5F5' }}>
             <CardContent>
                 <h2>Water Card</h2>
             </CardContent>
