@@ -7,10 +7,21 @@ const HeroCard = () => {
     return (
         <Card sx={{ backgroundColor: '#FFF3E0' }}>
             <CardContent>
-                <Box display="flex" alignItems="center" justifyContent="center">
-                    <Box>
-                        <Typography>Olá, usuário!</Typography>
-                        <Typography>
+                <Box
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="space-evenly"
+                    gap="2rem"
+                >
+                    <Box display="flex" flexDirection="column" gap="1rem">
+                        <Typography
+                            variant="h1"
+                            color="#000000DE"
+                            fontSize="34px"
+                        >
+                            Olá, usuário!
+                        </Typography>
+                        <Typography color="#000000DE" fontSize="24px">
                             Confira as informações da sua casa inteligente!
                         </Typography>
                     </Box>
